@@ -6,7 +6,7 @@ require('dotenv').config()
 const routes_products = require('./routes/products')
 const routes_home = require('./routes/home/routes-home')
 const sequelize = require('./db/conn_seque')
-
+// const expressLayouts = require('express-ejs-layouts');
 const app = express()
 
 //! Configuraciones
@@ -18,6 +18,7 @@ app.set('views', path.join( __dirname, 'views' ))
 //! Middleware
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
+// app.use(expressLayouts);
 app.use(morgan('dev'))
 
 //? Define default method: GET

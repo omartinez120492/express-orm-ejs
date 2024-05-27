@@ -6,6 +6,7 @@ ProductsController.getAll = async(req, res)=>{
         const data = await ModelUser.findAll()
         return res.render('products/index',{
             msg: "Todos los productos",
+            title:'Productos',
             users: data,
             error: null
         })
