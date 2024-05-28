@@ -6,6 +6,8 @@ require('dotenv').config()
 const routes_products = require('./routes/products')
 const routes_home = require('./routes/home/routes-home')
 const sequelize = require('./db/conn_seque')
+const methodOverride = require('method-override')
+
 // const expressLayouts = require('express-ejs-layouts');
 const app = express()
 
@@ -20,6 +22,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 // app.use(expressLayouts);
 app.use(morgan('dev'))
+app.use(methodOverride('_method'))
+
 
 //? Define default method: GET
 app.use('/', routes_home)

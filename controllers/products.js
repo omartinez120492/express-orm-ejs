@@ -71,6 +71,8 @@ ProductsController.save = async(req, res)=>{
 }
 
 ProductsController.update = async(req, res)=>{
+    return res.json('Muy bien, funciona')
+/*
     const { id } = req.params
     const  userupddate = req.body
     try {
@@ -103,7 +105,12 @@ ProductsController.update = async(req, res)=>{
             valError
         })
     }
-
+*/
 }
+
+ProductsController.delete = async(req, res)=>{
+    res.json('Methodo delete')
+}
+
 
 module.exports = ProductsController
